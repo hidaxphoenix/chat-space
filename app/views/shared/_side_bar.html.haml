@@ -1,0 +1,21 @@
+.chat-side
+  .side-header
+    .side-header__box
+      .side-header__box__user-name
+        hidaka
+      .side-header__box__icon
+        = link_to "#" do
+          =icon('far', 'edit', class: 'side-header__box__icon__edit')
+        = link_to "#" do
+          =icon('fas', 'cog', class: 'side-header__box__icon__cog')
+  .side-log
+    .side-log__up
+      %p.side-log__up__text-group
+        kururi
+      %p.side-log__up__text-message
+        今日の練習は中止です。
+    .side-log__down
+      %p.side-log__down__text-group
+        Faba
+      %p.side-log__down__text-message
+        マタドガス最高。 

@@ -2,12 +2,12 @@
   .side-header
     .side-header__box
       .side-header__box__user-name
-        hidaka
+        = current_user.name
       .side-header__box__icon
         = link_to "#" do
           =icon('far', 'edit', class: 'side-header__box__icon__edit')
-        = link_to "#" do
-          =icon('fas', 'cog', class: 'side-header__box__icon__cog')
+        = link_to edit_user_path(current_user) do
+          = icon('fas', 'cog', class: 'side-header__box__icon__cog')
   .side-log
     .side-log__up
       %p.side-log__up__text-group

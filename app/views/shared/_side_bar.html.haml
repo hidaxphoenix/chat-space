@@ -4,18 +4,14 @@
       .side-header__box__user-name
         = current_user.name
       .side-header__box__icon
-        = link_to "#" do
+        = link_to new_group_path do
           =icon('far', 'edit', class: 'side-header__box__icon__edit')
         = link_to edit_user_path(current_user) do
           = icon('fas', 'cog', class: 'side-header__box__icon__cog')
   .side-log
-    .side-log__up
-      %p.side-log__up__text-group
-        kururi
-      %p.side-log__up__text-message
-        今日の練習は中止です。
-    .side-log__down
-      %p.side-log__down__text-group
-        Faba
-      %p.side-log__down__text-message
-        マタドガス最高。 
+    - current_user.groups.each do |group|
+      = link_to '#', class: 'side-log__up'do
+        %p.side-log__up__text-group
+          = group.name
+        %p.side-log__up__text-message
+          メッセージはまだありません。

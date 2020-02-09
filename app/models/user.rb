@@ -6,4 +6,6 @@ class User < ApplicationRecord
 
   validates :name, presence: true
   # devise実装時に追記。空の文字列入力を防ぐ目的。
+  has_many :group_users
+  has_many :groups, through: :group_users
 end

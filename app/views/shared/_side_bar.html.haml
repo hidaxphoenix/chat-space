@@ -5,13 +5,14 @@
         = current_user.name
       .side-header__box__icon
         = link_to new_group_path do
-          =icon('far', 'edit', class: 'side-header__box__icon__edit')
+          = icon('far', 'edit', class: 'side-header__box__icon__edit')
         = link_to edit_user_path(current_user) do
           = icon('fas', 'cog', class: 'side-header__box__icon__cog')
   .side-log
     - current_user.groups.each do |group|
-      = link_to '#', class: 'side-log__up'do
-        %p.side-log__up__text-group
-          = group.name
-        %p.side-log__up__text-message
-          メッセージはまだありません。
+      = link_to group_messages_path(group), class: "side-log__up" do
+        .side-log__up__text
+          .side-log__up__text__text-group
+            = group.name
+          .side-log__up__text__text-message
+            = group.show_last_message

@@ -52,7 +52,6 @@ $(function(){
       contentType: false
     })
     .done(function(data){
-      console.log(data);
       var html = buildHTML(data);
       $('.main-message').append(html);
       $('.form__submit').attr('disabled', false);
